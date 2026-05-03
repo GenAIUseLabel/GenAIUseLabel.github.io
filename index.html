@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GenAI Use Attribution Label Framework</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">Attribution Framework</p>
+      <h1>GenAIUseLabel</h1>
+      <p class="lede">
+        A simple, standardized way for students to declare how generative AI
+        contributed to submitted academic work.
+      </p>
+      <div class="label-card" aria-label="Example GenAI usage tag">
+        <span>Example Tag</span>
+        <strong>GAI:ID-1, AN-2, PO-1</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>What Is GenAIUseLabel?</h2>
+      <p>
+        A GenAI Use Label is a simple, standardized way for students to
+        declare how they used generative AI in preparing submitted work. It
+        treats an assignment, paper, project, problem set, presentation, or
+        other deliverable as a workflow made up of several stages, such as
+        ideation, synthesis, analysis, drafting, and polishing. For each stage
+        where GenAI was used, the student reports both the stage and the level
+        of use. The result is a compact label, such as
+        <strong>GAI:ID-1, AN-2, PO-1</strong>, that gives instructors a quick
+        summary of where GenAI contributed and how substantially it shaped the
+        submitted work.
+      </p>
+      <p>
+        The GenAI Use Label is suggested because students need a disclosure
+        method that is consistent, comprehensive, and easy to use. Without a
+        shared format, GenAI declarations can be vague, incomplete, or
+        difficult to compare across assignments. A short label reduces
+        reporting friction while still capturing the most important
+        information: whether GenAI was used only for minor support, whether it
+        shaped the student's thinking or analysis, or whether it generated
+        substantial parts of the submitted work.
+      </p>
+    </section>
+
+    <section>
+      <h2>Framework Dimensions</h2>
+      <p>
+        The framework has two dimensions: <strong>stages</strong>, which
+        identify where GenAI was used in the workflow, and
+        <strong>levels</strong>, which describe how substantially GenAI shaped
+        that stage of the work.
+      </p>
+
+      <div class="dimensions-grid">
+        <article>
+          <h3>Simplified Stages</h3>
+          <div class="table-wrap compact-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Code</th>
+                  <th>Stage</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>ID</strong></td>
+                  <td>Ideation</td>
+                </tr>
+                <tr>
+                  <td><strong>SY</strong></td>
+                  <td>Synthesis</td>
+                </tr>
+                <tr>
+                  <td><strong>AN</strong></td>
+                  <td>Analysis</td>
+                </tr>
+                <tr>
+                  <td><strong>DR</strong></td>
+                  <td>Drafting</td>
+                </tr>
+                <tr>
+                  <td><strong>PO</strong></td>
+                  <td>Polishing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article>
+          <h3>Simplified Levels</h3>
+          <div class="table-wrap compact-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Label</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Level 0</strong></td>
+                  <td>None</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 1</strong></td>
+                  <td>Assistive</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 2</strong></td>
+                  <td>Collaborative</td>
+                </tr>
+                <tr>
+                  <td><strong>Level 3</strong></td>
+                  <td>Generative</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>How to Declare GenAI Use</h2>
+      <p>
+        Students may declare their use of generative AI using a short,
+        standardized tag. The tag is designed to work like a simplified
+        license-style label, similar in spirit to labels such as
+        <strong>CC BY-SA</strong>. Its purpose is to give instructors a quick,
+        readable summary of <strong>where</strong> and <strong>how much</strong>
+        GenAI was used in the submitted work.
+      </p>
+      <p>
+        The tag does not replace normal academic integrity rules, citation
+        requirements, or assignment-specific GenAI policies. Instead, it
+        provides a compact disclosure of GenAI involvement across the stages of
+        the work.
+      </p>
+
+      <div class="rule-grid">
+        <article>
+          <h3>Basic Format</h3>
+          <p>The standard format is:</p>
+          <p class="tag">GAI:Stage-Level</p>
+          <p>GAI:ABC-# means GenAI was used in the ABC stage at Level #.</p>
+        </article>
+        <article>
+          <h3>Multiple Stages</h3>
+          <p>When GenAI is used in more than one stage, list all applicable stage-level pairs.</p>
+          <p class="tag">GAI:ID-2, PO-1</p>
+          <p>This means Ideation at Level 2 and Polishing at Level 1.</p>
+        </article>
+        <article>
+          <h3>No GenAI Used</h3>
+          <p>If no GenAI was used at any stage, students may write:</p>
+          <p class="tag">GAI:None</p>
+          <p>For consistency, this is the recommended official shorthand.</p>
+        </article>
+      </div>
+
+      <h3>General Tagging Rule</h3>
+      <p>
+        Students should report every stage in which GenAI use was above
+        <strong>Level 0</strong>. If GenAI was not used in a stage, that stage
+        does not need to appear in the tag.
+      </p>
+
+      <h3>Recommended Stage Order</h3>
+      <p>
+        To make tags easy to read and compare, students should list stages in
+        the standard order:
+      </p>
+      <p class="tag">ID, SY, AN, DR, PO</p>
+    </section>
+
+    <section>
+      <h2>Examples of Tags</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tag</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>GAI:PO-1</strong></td>
+              <td>GenAI was used only for assistive polishing, such as grammar, clarity, formatting, or minor language
+                improvement.</td>
+            </tr>
+            <tr>
+              <td><strong>GAI:ID-1, PO-1</strong></td>
+              <td>GenAI was used to brainstorm or clarify the assignment and later to polish the final writing.</td>
+            </tr>
+            <tr>
+              <td><strong>GAI:SY-2, PO-1</strong></td>
+              <td>GenAI helped organize or synthesize information in a substantive way, and was also used for minor
+                polishing.</td>
+            </tr>
+            <tr>
+              <td><strong>GAI:AN-2</strong></td>
+              <td>GenAI was used collaboratively in the analysis stage, such as helping develop code, formulas,
+                calculations, interpretations, or solution steps.</td>
+            </tr>
+            <tr>
+              <td><strong>GAI:DR-3, PO-1</strong></td>
+              <td>GenAI generated substantial draft content, and was also used for polishing.</td>
+            </tr>
+            <tr>
+              <td><strong>GAI:ID-2, SY-2, AN-2, DR-1, PO-1</strong></td>
+              <td>GenAI was used collaboratively across ideation, synthesis, and analysis, but only assistively for
+                drafting and polishing.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Student-Facing Explanation</h2>
+      <blockquote>
+        Please declare any GenAI use in your submission using the format
+        <strong>GAI:Stage-Level</strong>. List every stage where your GenAI use
+        was above Level 0. For example, <strong>GAI:ID-1, PO-1</strong> means
+        that you used GenAI to help with ideation and polishing, but not for
+        synthesis, analysis, or drafting.
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>Assignment Examples</h2>
+      <div class="example-list">
+        <article>
+          <h3>Example 1: Corporate Finance Assignment</h3>
+          <p>
+            A student submits a corporate finance problem set. They use GenAI
+            to clarify what a question is asking, ask for a reminder of the
+            difference between NPV and IRR, and check their final explanation
+            for grammar. They complete all calculations themselves and do not
+            use GenAI to generate the final answers.
+          </p>
+          <p class="tag">GAI:ID-1, SY-1, PO-1</p>
+          <blockquote>I used GenAI to clarify the assignment questions, review relevant finance concepts, and polish
+            grammar. I completed the calculations and final answers myself.</blockquote>
+        </article>
+
+        <article>
+          <h3>Example 2: Corporate Finance Assignment with AI-Assisted Analysis</h3>
+          <p>
+            A student submits a valuation assignment. They use GenAI to help
+            structure an Excel model, debug formulas, compare valuation
+            assumptions, and interpret sensitivity analysis. The student checks
+            the formulas, revises the assumptions, and writes the final answer
+            themselves.
+          </p>
+          <p class="tag">GAI:AN-2, PO-1</p>
+          <blockquote>I used GenAI collaboratively to help structure and troubleshoot parts of the valuation analysis. I
+            verified the calculations and wrote the final explanation myself. I also used GenAI for grammar and clarity.
+          </blockquote>
+        </article>
+
+        <article>
+          <h3>Example 3: Analytics Project</h3>
+          <p>
+            A student submits a data analytics project. They use GenAI to
+            suggest possible research questions, help clean data in Python,
+            debug code, generate a first version of a visualization, and
+            polish the final report. The student revises the code, checks the
+            results, and writes most of the report themselves.
+          </p>
+          <p class="tag">GAI:ID-1, AN-2, DR-2, PO-1</p>
+          <blockquote>I used GenAI to brainstorm possible project directions, assist with Python coding and debugging,
+            generate an initial visualization, and polish the final report. I reviewed, revised, and verified the
+            analysis and final outputs.</blockquote>
+        </article>
+
+        <article>
+          <h3>Example 4: Research Paper</h3>
+          <p>
+            A student writes a short research paper. They use GenAI to help
+            identify possible themes, summarize some readings, organize a
+            comparison table, and rewrite several paragraphs. The student
+            verifies the sources, revises the text, and adds their own
+            argument.
+          </p>
+          <p class="tag">GAI:ID-1, SY-2, DR-2, PO-1</p>
+          <blockquote>I used GenAI to brainstorm themes, organize and summarize background material, draft portions of
+            the paper, and polish the final writing. I verified the sources and substantially revised the final
+            submission.</blockquote>
+        </article>
+
+        <article>
+          <h3>Example 5: AI-Generated Draft</h3>
+          <p>
+            A student submits a written report. They provide a prompt to GenAI
+            and receive a full draft. They then make minor edits, add a few
+            references, and submit the revised version.
+          </p>
+          <p class="tag">GAI:DR-3, PO-1</p>
+          <blockquote>I used GenAI to generate a substantial first draft of the report and then edited the output before
+            submission.</blockquote>
+          <p>
+            Depending on the course policy, this level of use may or may not
+            be allowed. The tag only discloses the use; it does not
+            automatically make the use acceptable.
+          </p>
+        </article>
+
+        <article>
+          <h3>Example 6: Presentation or Slide Assignment</h3>
+          <p>
+            A student prepares a class presentation. They use GenAI to
+            brainstorm the structure, generate draft slide titles, create a
+            first version of the speaker notes, and improve the visual layout.
+          </p>
+          <p class="tag">GAI:ID-1, DR-2, PO-1</p>
+          <blockquote>I used GenAI to brainstorm the presentation structure, draft some slide content and speaker notes,
+            and improve clarity and formatting.</blockquote>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommended Disclosure Format</h2>
+      <p>Students could include the declaration at the beginning or end of the submission:</p>
+      <p class="tag">GenAI Usage Tag: GAI:ID-1, AN-2, PO-1</p>
+      <p>For longer assignments, students may add a short explanation if requested:</p>
+      <blockquote>
+        <strong>GenAI Usage Tag:</strong> GAI:ID-1, AN-2, PO-1<br>
+        I used GenAI to brainstorm possible approaches, assist with analysis
+        and coding, and polish the final writing.
+      </blockquote>
+      <p>For assignments where no GenAI was used:</p>
+      <p class="tag">GenAI Usage Tag: GAI:None</p>
+
+      <h3>Suggested Rule for Students</h3>
+      <blockquote>
+        When in doubt, disclose the higher level of GenAI use. If GenAI
+        influenced the content, structure, analysis, code, or final wording of
+        your submission, it should be included in the tag.
+      </blockquote>
+
+      <h3>Suggested Instructor-Facing Note</h3>
+      <blockquote>
+        The GenAI Usage Tag is a disclosure tool, not a permission tool.
+        Whether a particular tag is acceptable depends on the instructor's
+        assignment policy. For example, one assignment may allow
+        <strong>GAI:PO-1</strong> but prohibit <strong>GAI:DR-3</strong>, while
+        another may allow broader GenAI collaboration if properly disclosed.
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>GENAIUseLabel.v1</h2>
+
+      <h3>Stages</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Stage</th>
+              <th>Definition</th>
+              <th>Student-Friendly Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ID</strong></td>
+              <td>Ideation</td>
+              <td>Using GenAI to clarify the assignment prompt, brainstorm possible topics, develop or refine research
+                questions, generate initial approaches, or identify possible angles for a response.</td>
+              <td>Helped me think of topics, questions, approaches, or understand the assignment.</td>
+            </tr>
+            <tr>
+              <td><strong>SY</strong></td>
+              <td>Synthesis</td>
+              <td>Using GenAI to summarize, compare, organize, or explain existing information, including course
+                materials, readings, literature, sources, datasets, concepts, or background context.</td>
+              <td>Helped me understand, summarize, compare, or organize existing information or sources.</td>
+            </tr>
+            <tr>
+              <td><strong>AN</strong></td>
+              <td>Analysis</td>
+              <td>Using GenAI to support substantive analytical work, including applying concepts, evaluating
+                alternatives, developing arguments, interpreting evidence, cleaning or analyzing data, or
+                writing/debugging code.</td>
+              <td>Helped me analyze data, evidence, arguments, alternatives, code, or results.</td>
+            </tr>
+            <tr>
+              <td><strong>DR</strong></td>
+              <td>Drafting</td>
+              <td>Using GenAI to generate new material that may appear in the submitted work, including sentences,
+                paragraphs, sections, full drafts, code, tables, slides, figures, diagrams, images, or other components.
+              </td>
+              <td>Helped generate text, code, visuals, tables, slides, or other material used in the submission.</td>
+            </tr>
+            <tr>
+              <td><strong>PO</strong></td>
+              <td>Polishing</td>
+              <td>Using GenAI to improve the clarity, grammar, style, tone, formatting, translation, or presentation of
+                student-authored work, without adding new substantive ideas, analysis, evidence, or arguments.</td>
+              <td>Helped edit, translate, format, or improve the clarity of my own work without changing the substance.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Levels</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Label</th>
+              <th>Student-Friendly Wording</th>
+              <th>Definition</th>
+              <th>What This Means in Practice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Level 0</td>
+              <td>None</td>
+              <td>I did not use GenAI for this stage.</td>
+              <td>No GenAI was used for this stage, except any tools or uses explicitly exempted by the course
+                instructor.</td>
+              <td>The work for this stage was completed by the student without GenAI support. GenAI did not help
+                generate ideas, find or summarize information, analyze material, produce code, draft content, or polish
+                the output.</td>
+            </tr>
+            <tr>
+              <td>Level 1</td>
+              <td>Assistive</td>
+              <td>GenAI helped me, but did not shape the substance of my work.</td>
+              <td>GenAI was used for limited support tasks, but the student remained fully responsible for the
+                substance, decisions, and final output of the stage.</td>
+              <td>GenAI may have helped clarify instructions, suggest search terms, explain a concept, check grammar,
+                suggest minor wording changes, or offer small technical hints. The student independently created the
+                main output.</td>
+            </tr>
+            <tr>
+              <td>Level 2</td>
+              <td>Collaborative</td>
+              <td>GenAI worked with me and influenced the structure, reasoning, or content.</td>
+              <td>GenAI materially contributed to the stage output, but the student remained the primary intellectual
+                author and substantially revised, selected, verified, and integrated the work.</td>
+              <td>GenAI may have helped develop an outline, compare alternatives, refine an argument, generate a code
+                scaffold, organize sources, suggest solution steps, or draft portions that the student substantially
+                edited.</td>
+            </tr>
+            <tr>
+              <td>Level 3</td>
+              <td>Generative</td>
+              <td>GenAI produced much of the output for this stage.</td>
+              <td>GenAI performed the primary content-production, analytic, coding, or design work for the stage, with
+                limited human modification before submission.</td>
+              <td>GenAI may have generated substantial text, code, analysis, tables, figures, slides, solutions, or
+                other deliverable components that were used with little or moderate revision. The student reviewed or
+                adjusted the output.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Matrix View</h3>
+      <div class="table-wrap matrix-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>Level 0 (None)</th>
+              <th>Level 1 (Assistive)</th>
+              <th>Level 2 (Collaborative)</th>
+              <th>Level 3 (Generative)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ideation (ID)</strong></td>
+              <td>Topics, questions, approaches, hypotheses, or solution strategies were developed without GenAI.</td>
+              <td>GenAI helped clarify the assignment prompt, explain what the question was asking, suggest possible
+                directions, or provide brainstorming prompts. The student selected and developed the final direction
+                independently.</td>
+              <td>GenAI-generated ideas, research questions, hypotheses, outlines, or solution approaches materially
+                shaped the submitted work, but the student substantially revised, selected, and justified them.</td>
+              <td>The main topic, research question, hypothesis, proposal rationale, or solution strategy was largely
+                generated by GenAI and used with limited human transformation.</td>
+            </tr>
+            <tr>
+              <td><strong>Synthesis (SY)</strong></td>
+              <td>Sources, course materials, concepts, datasets, and background information were found, read,
+                summarized, and organized without GenAI.</td>
+              <td>GenAI helped suggest search terms, explain concepts, summarize short passages, identify possible
+                source types, or organize notes. The student verified all information against reliable sources.</td>
+              <td>GenAI-generated summaries, comparison tables, literature maps, concept explanations, source groupings,
+                or background syntheses materially shaped the submitted work, after student verification and revision.
+              </td>
+              <td>The literature review, background section, evidence map, source synthesis, or conceptual explanation
+                was largely generated by GenAI and used with limited independent verification or rewriting.</td>
+            </tr>
+            <tr>
+              <td><strong>Analysis (AN)</strong></td>
+              <td>Analytical reasoning, calculations, coding, data cleaning, interpretation, problem-solving, and
+                evaluation were completed without GenAI.</td>
+              <td>GenAI helped with limited support such as syntax suggestions, debugging hints, formula reminders,
+                explanation of methods, robustness-check ideas, or clarification of analytical steps. The student
+                performed and verified the analysis.</td>
+              <td>GenAI-generated code, calculations, analytical steps, interpretations, classifications, tradeoff
+                analyses, or solution paths materially shaped the final work, but the student tested, revised, verified,
+                and explained them.</td>
+              <td>The core analysis, code, statistical work, interpretation, classification, solution, or evaluation was
+                largely produced by GenAI and used with limited human modification or independent verification.</td>
+            </tr>
+            <tr>
+              <td><strong>Drafting (DR)</strong></td>
+              <td>Submitted text, code, tables, figures, slides, diagrams, captions, or other deliverable components
+                were drafted without GenAI.</td>
+              <td>GenAI helped with minor wording suggestions, structure reminders, transition ideas, caption
+                alternatives, or formatting suggestions, but did not produce substantive submitted content.</td>
+              <td>GenAI drafted paragraphs, sections, code blocks, tables, figure descriptions, slides, captions, or
+                other deliverable components that were substantially revised and integrated by the student.</td>
+              <td>Substantial portions of the submitted text, code, tables, figures, slides, diagrams, captions, or
+                other deliverable components were generated by GenAI and used with limited revision.</td>
+            </tr>
+            <tr>
+              <td><strong>Polishing (PO)</strong></td>
+              <td>Editing, proofreading, formatting, translation, and presentation refinement were completed without
+                GenAI.</td>
+              <td>GenAI helped correct grammar, spelling, tone, clarity, formatting, concision, or translation of
+                student-authored text without adding new substantive ideas, evidence, arguments, or analysis.</td>
+              <td>GenAI substantially rewrote, reorganized, translated, or reformatted student-authored work, while the
+                student reviewed and revised the output to preserve their intended meaning and argument.</td>
+              <td>The final wording, translation, rewrite, formatting, or presentation style was largely produced by
+                GenAI, with limited human editing before submission.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="declaration">
+      <h2>GenAI Use Declaration</h2>
+      <p>GENAI has been used to develop GenAIUseLabel. Here is our declaration using GenAIUseLabel:</p>
+      <p class="tag">GAI:ID-1, SY-2, AN-2, DR-2, PO-2</p>
+      <blockquote>Gemini 3 (Thinking mode), GPT 5.3 (Instant mode), GPT 5.5 (Thinking mode), and gpt-5.5 (in Codex) have
+        been used in various of stages of the development of GenAIUseLabel. GenAI use is no more than Level 2 in version
+        1 of the framework.
+      </blockquote>
+    </section>
+  </main>
+</body>
+
+</html>
