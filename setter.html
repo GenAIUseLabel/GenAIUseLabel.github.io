@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GenAIUseExpectation Setter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="generator-page">
+  <header class="site-header generator-header">
+    <div class="container">
+      <p class="eyebrow">Instructor Tool</p>
+      <h1>GenAIUseExpectation Setter</h1>
+      <p class="lede">
+        Set the maximum GenAI use level allowed for each stage of an assignment.
+        The viewer link will show students what is allowed and not allowed.
+      </p>
+      <div class="header-actions">
+        <a class="text-link" href="index.html">View the full framework</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container generator-main">
+    <section class="generator-shell" aria-labelledby="setter-title">
+      <div class="generator-topline">
+        <div>
+          <p class="eyebrow">Step <span id="stepNumber">1</span> of <span id="stepTotal">5</span></p>
+          <h2 id="setter-title">Set Maximum Allowed Use</h2>
+        </div>
+        <p class="live-tag" aria-live="polite" id="currentPolicy">Policy: In progress</p>
+      </div>
+
+      <div class="progress-track" aria-hidden="true">
+        <span id="progressBar"></span>
+      </div>
+
+      <div class="stage-panel" id="stagePanel">
+        <div class="stage-intro">
+          <p class="stage-code" id="stageCode">ID</p>
+          <div>
+            <h3 id="stageName">Ideation</h3>
+            <p id="stageDescription">
+              Choose the highest GenAI use level students may use for this stage.
+            </p>
+          </div>
+        </div>
+
+        <div class="level-grid" id="levelGrid" role="radiogroup" aria-labelledby="stageName"></div>
+      </div>
+
+      <div class="generator-controls">
+        <button class="control-button secondary" type="button" id="backButton">Back</button>
+        <button class="control-button secondary" type="button" id="resetButton">Reset</button>
+      </div>
+    </section>
+
+    <section class="result-panel" id="resultPanel" aria-labelledby="result-title" hidden>
+      <div>
+        <p class="eyebrow">Shareable Expectations</p>
+        <h2 id="result-title">Your GenAI Use Expectation Links</h2>
+        <p>
+          Share the viewer link with students. Keep the edit link if you want to reopen these settings later.
+        </p>
+      </div>
+
+      <div class="copy-card link-copy-card">
+        <div>
+          <p class="link-label">Student Viewer Link</p>
+          <p class="generated-label link-output" id="viewerLink"></p>
+        </div>
+        <button class="copy-button" type="button" data-copy-target="viewerLink" aria-label="Copy viewer link">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <rect x="9" y="9" width="10" height="10" rx="2"></rect>
+            <path d="M5 15V7a2 2 0 0 1 2-2h8"></path>
+          </svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <div class="copy-card link-copy-card">
+        <div>
+          <p class="link-label">Student Generator Link</p>
+          <p class="generated-label link-output" id="generatorLink"></p>
+        </div>
+        <button class="copy-button" type="button" data-copy-target="generatorLink" aria-label="Copy student generator link">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <rect x="9" y="9" width="10" height="10" rx="2"></rect>
+            <path d="M5 15V7a2 2 0 0 1 2-2h8"></path>
+          </svg>
+          <span>Copy</span>
+        </button>
+      </div>
+
+      <div class="summary-disclosure" id="summaryDisclosure">
+        <button class="summary-toggle" type="button" id="summaryToggle" aria-expanded="false" aria-controls="summaryList">
+          <span class="summary-toggle-icon" aria-hidden="true">+</span>
+          <span id="summaryToggleText">Expand summary</span>
+        </button>
+        <div class="summary-list" id="summaryList" hidden></div>
+      </div>
+
+      <div class="generator-controls result-controls">
+        <button class="control-button secondary" type="button" id="editButton">Edit Expectations</button>
+        <a class="control-button primary button-link" href="#" id="openViewerLink">Open Viewer</a>
+      </div>
+    </section>
+
+    <section class="reference-section" aria-labelledby="reference-title">
+      <h2 id="reference-title">How to Read the Levels</h2>
+      <div class="reference-grid">
+        <article>
+          <h3>Maximum Level</h3>
+          <p>
+            The level you choose is the highest level allowed. For example,
+            Level 1 allows Levels 0 and 1, but does not allow Levels 2 or 3.
+          </p>
+        </article>
+        <article>
+          <h3>Disclosure</h3>
+          <p>
+            Students still disclose their actual use with a GenAIUseLabel. This
+            tool only states the expectations for an assignment.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const stages = [
+      {
+        code: "ID",
+        name: "Ideation",
+        description: "Choosing a topic, question, approach, hypothesis, or solution strategy.",
+        matrix: [
+          "Students may not use GenAI for ideation.",
+          "GenAI may help clarify the prompt or brainstorm options, but students must choose and develop the direction themselves.",
+          "GenAI may shape ideas, questions, outlines, or approaches if students revise, select, and justify what they use.",
+          "GenAI may largely create the main topic, question, hypothesis, rationale, or solution strategy."
+        ]
+      },
+      {
+        code: "SY",
+        name: "Synthesis",
+        description: "Understanding, summarizing, comparing, or organizing existing information, sources, concepts, or materials.",
+        matrix: [
+          "Students may not use GenAI for synthesis.",
+          "GenAI may explain concepts, suggest search terms, summarize short passages, or organize notes if students verify the information.",
+          "GenAI may create summaries, comparison tables, source groupings, or explanations if students verify and revise them.",
+          "GenAI may largely create the background, literature review, source synthesis, evidence map, or concept explanation."
+        ]
+      },
+      {
+        code: "AN",
+        name: "Analysis",
+        description: "Reasoning, calculations, coding, data work, interpretation, problem-solving, evaluation, or argument development.",
+        matrix: [
+          "Students may not use GenAI for analysis.",
+          "GenAI may provide limited hints, such as syntax help, formula reminders, debugging clues, method explanations, or check ideas.",
+          "GenAI may shape code, calculations, analytical steps, interpretations, or solution paths if students test and verify them.",
+          "GenAI may largely produce the core analysis, code, statistical work, interpretation, classification, solution, or evaluation."
+        ]
+      },
+      {
+        code: "DR",
+        name: "Drafting",
+        description: "Creating material that appears in the submission, such as text, code, tables, figures, slides, captions, or diagrams.",
+        matrix: [
+          "Students may not use GenAI for drafting submitted material.",
+          "GenAI may suggest small wording, structure, transition, caption, or formatting ideas, but may not create substantive submitted content.",
+          "GenAI may draft paragraphs, sections, code blocks, tables, visuals, slides, captions, or other components that students substantially revise.",
+          "GenAI may generate substantial submitted text, code, tables, figures, slides, diagrams, captions, or other components."
+        ]
+      },
+      {
+        code: "PO",
+        name: "Polishing",
+        description: "Editing student-created work for clarity, grammar, style, tone, formatting, translation, or presentation.",
+        matrix: [
+          "Students may not use GenAI for polishing.",
+          "GenAI may correct grammar, spelling, tone, clarity, formatting, concision, or translation without adding new substance.",
+          "GenAI may substantially rewrite, reorganize, translate, or reformat student-authored work if students review and revise the output.",
+          "GenAI may largely produce the final wording, translation, rewrite, formatting, or presentation style."
+        ]
+      }
+    ];
+
+    const levels = [
+      { number: 0, label: "None", short: "No GenAI use allowed" },
+      { number: 1, label: "Assistive", short: "Limited support is allowed" },
+      { number: 2, label: "Collaborative", short: "Substantive collaboration is allowed with student revision" },
+      { number: 3, label: "Generative", short: "Substantial GenAI production is allowed" }
+    ];
+
+    const policy = new Array(stages.length).fill(null);
+    let currentStage = 0;
+
+    const stepNumber = document.querySelector("#stepNumber");
+    const stepTotal = document.querySelector("#stepTotal");
+    const progressBar = document.querySelector("#progressBar");
+    const stagePanel = document.querySelector("#stagePanel");
+    const stageCode = document.querySelector("#stageCode");
+    const stageName = document.querySelector("#stageName");
+    const stageDescription = document.querySelector("#stageDescription");
+    const levelGrid = document.querySelector("#levelGrid");
+    const currentPolicy = document.querySelector("#currentPolicy");
+    const backButton = document.querySelector("#backButton");
+    const resetButton = document.querySelector("#resetButton");
+    const resultPanel = document.querySelector("#resultPanel");
+    const viewerLink = document.querySelector("#viewerLink");
+    const generatorLink = document.querySelector("#generatorLink");
+    const openViewerLink = document.querySelector("#openViewerLink");
+    const summaryList = document.querySelector("#summaryList");
+    const summaryDisclosure = document.querySelector("#summaryDisclosure");
+    const summaryToggle = document.querySelector("#summaryToggle");
+    const summaryToggleText = document.querySelector("#summaryToggleText");
+    const editButton = document.querySelector("#editButton");
+
+    stepTotal.textContent = stages.length;
+
+    function readPolicyFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const encoded = params.get("policy");
+      if (!encoded || !/^[0-3]{5}$/.test(encoded)) {
+        return;
+      }
+      encoded.split("").forEach((value, index) => {
+        policy[index] = Number(value);
+      });
+    }
+
+    function encodePolicy() {
+      return policy.map((level) => level ?? 0).join("");
+    }
+
+    function buildPolicySummary() {
+      const completed = policy.filter((level) => level !== null).length;
+      if (completed === 0) {
+        return "Policy: In progress";
+      }
+      if (completed < stages.length) {
+        return `Policy: ${completed}/${stages.length} stages set`;
+      }
+      return `Policy: ${stages.map((stage, index) => `${stage.code}-${policy[index]}`).join(", ")}`;
+    }
+
+    function buildUrl(pageName) {
+      const url = new URL(pageName, window.location.href);
+      url.searchParams.set("policy", encodePolicy());
+      return url.href;
+    }
+
+    function renderStage() {
+      const stage = stages[currentStage];
+      stepNumber.textContent = currentStage + 1;
+      progressBar.style.width = `${((currentStage + 1) / stages.length) * 100}%`;
+      stageCode.textContent = stage.code;
+      stageName.textContent = stage.name;
+      stageDescription.textContent = stage.description;
+      currentPolicy.textContent = buildPolicySummary();
+      backButton.disabled = currentStage === 0;
+
+      levelGrid.innerHTML = "";
+      levels.forEach((level) => {
+        const tile = document.createElement("button");
+        tile.className = "level-tile expectation-tile";
+        tile.type = "button";
+        tile.setAttribute("role", "radio");
+        tile.setAttribute("aria-checked", policy[currentStage] === level.number ? "true" : "false");
+        tile.innerHTML = `
+          <span class="level-number">Max Level ${level.number}</span>
+          <strong>${level.label}</strong>
+          <span>${level.short}</span>
+          <em>${stage.matrix[level.number]}</em>
+        `;
+        tile.addEventListener("click", () => chooseLevel(level.number));
+        levelGrid.append(tile);
+      });
+    }
+
+    function chooseLevel(level) {
+      policy[currentStage] = level;
+      currentPolicy.textContent = buildPolicySummary();
+
+      if (currentStage < stages.length - 1) {
+        stagePanel.classList.add("is-leaving");
+        window.setTimeout(() => {
+          currentStage += 1;
+          stagePanel.classList.remove("is-leaving");
+          stagePanel.classList.add("is-entering");
+          renderStage();
+          window.setTimeout(() => stagePanel.classList.remove("is-entering"), 180);
+        }, 160);
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      policy.forEach((level, index) => {
+        if (level === null) {
+          policy[index] = 0;
+        }
+      });
+
+      const viewerUrl = buildUrl("viewer.html");
+      const generatorUrl = buildUrl("generator.html");
+      viewerLink.textContent = viewerUrl;
+      generatorLink.textContent = generatorUrl;
+      openViewerLink.href = viewerUrl;
+      currentPolicy.textContent = buildPolicySummary();
+      summaryList.innerHTML = "";
+      setSummaryOpen(false);
+
+      stages.forEach((stage, index) => {
+        const level = policy[index];
+        const item = document.createElement("article");
+        item.className = "summary-item";
+        item.innerHTML = `
+          <div>
+            <strong>${stage.name} (${stage.code})</strong>
+            <span>Allowed up to Level ${level}: ${levels[level].label}</span>
+          </div>
+          <p>${stage.matrix[level]}</p>
+        `;
+        summaryList.append(item);
+      });
+
+      document.querySelector(".generator-shell").hidden = true;
+      resultPanel.hidden = false;
+      resultPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function setSummaryOpen(isOpen) {
+      summaryList.hidden = !isOpen;
+      summaryDisclosure.classList.toggle("is-open", isOpen);
+      summaryToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      summaryToggle.querySelector(".summary-toggle-icon").textContent = isOpen ? "−" : "+";
+      summaryToggleText.textContent = isOpen ? "Hide summary" : "Expand summary";
+    }
+
+    function resetSetter() {
+      policy.fill(null);
+      currentStage = 0;
+      resultPanel.hidden = true;
+      document.querySelector(".generator-shell").hidden = false;
+      renderStage();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    async function copyText(button) {
+      const target = document.querySelector(`#${button.dataset.copyTarget}`);
+      const status = button.querySelector("span");
+      try {
+        await navigator.clipboard.writeText(target.textContent);
+        status.textContent = "Copied";
+        button.classList.add("is-copied");
+        window.setTimeout(() => {
+          status.textContent = "Copy";
+          button.classList.remove("is-copied");
+        }, 1800);
+      } catch {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(target);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        status.textContent = "Selected";
+      }
+    }
+
+    backButton.addEventListener("click", () => {
+      if (currentStage > 0) {
+        currentStage -= 1;
+        renderStage();
+      }
+    });
+
+    resetButton.addEventListener("click", resetSetter);
+    summaryToggle.addEventListener("click", () => {
+      setSummaryOpen(summaryToggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    editButton.addEventListener("click", () => {
+      currentStage = 0;
+      resultPanel.hidden = true;
+      setSummaryOpen(false);
+      document.querySelector(".generator-shell").hidden = false;
+      renderStage();
+      document.querySelector(".generator-shell").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    document.querySelectorAll("[data-copy-target]").forEach((button) => {
+      button.addEventListener("click", () => copyText(button));
+    });
+
+    readPolicyFromUrl();
+    renderStage();
+  </script>
+</body>
+
+</html>
