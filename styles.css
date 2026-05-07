@@ -299,6 +299,52 @@ th:first-child {
   margin-top: 0;
 }
 
+.info-tiles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.info-tile {
+  padding: 26px;
+  border: 1px solid rgba(31, 111, 104, 0.24);
+  border-radius: 8px;
+  background: rgba(255, 253, 248, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.info-tile h2 {
+  margin-top: 0;
+}
+
+.info-tile h3 {
+  margin-top: 24px;
+}
+
+.info-tile a {
+  color: var(--accent-strong);
+  font-weight: 760;
+  text-underline-offset: 4px;
+}
+
+.bibtex-block {
+  max-width: 100%;
+  margin: 14px 0 0;
+  padding: 16px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f0ece3;
+  color: #252822;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.bibtex-block code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
 .header-actions {
   display: flex;
   flex-wrap: wrap;
