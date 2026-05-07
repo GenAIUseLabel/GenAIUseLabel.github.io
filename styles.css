@@ -310,7 +310,7 @@ th:first-child {
   padding: 26px;
   border: 1px solid rgba(31, 111, 104, 0.24);
   border-radius: 8px;
-  background: rgba(255, 253, 248, 0.82);
+  background: linear-gradient(135deg, rgba(229, 241, 239, 0.62), rgba(255, 253, 248, 0.96));
   box-shadow: var(--shadow);
 }
 
@@ -320,6 +320,10 @@ th:first-child {
 
 .info-tile h3 {
   margin-top: 24px;
+}
+
+.info-tile blockquote {
+  max-width: none;
 }
 
 .info-tile a {
