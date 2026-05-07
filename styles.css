@@ -202,6 +202,17 @@ blockquote {
   color: #383b36;
 }
 
+.quote-box {
+  display: block;
+  max-width: none;
+  margin: 18px 0 0;
+  padding: 18px 22px;
+  border-left: 4px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 253, 248, 0.78);
+  color: #383b36;
+}
+
 .table-wrap {
   width: 100%;
   margin-top: 24px;
